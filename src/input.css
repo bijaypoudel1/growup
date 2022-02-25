@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply font-Poppins;
+}
+
+.max-w {
+  @apply max-w-[1400px] mx-auto;
+}
+
+.animation {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.w-padding {
+  @apply md:px-10 px-5;
+}
+
+.link-text {
+  @apply text-white hover:text-red-500 animation;
+}
+
+.h-text {
+  @apply text-[#2c234d] md:text-[44px] text-[30px] font-bold font-Teko tracking-wider uppercase;
+}
+
+.p-text {
+  @apply text-[#584a49];
+}
+
+.services-card {
+  @apply flex flex-col items-center shadow-lg rounded-lg mt-10 hover:shadow-2xl transition-all duration-300 ease-in-out;
+}
