@@ -6,35 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GYM</title>
     <link rel="stylesheet" href="output.css" />
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- google icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined|"
+      rel="stylesheet"
+    />
+
+    <!-- elements components -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
   </head>
-  <body>
+  <body id="home">
     <!-- nav bar -->
-    <nav class="bg-transparent fixed w-full top-0 z-50 animation" id="nav">
+    <nav class="bg-transparent fixed w-full top-0 z-50 animation py-3" id="nav">
       <div
         class="flex justify-between items-center max-w-[1400px] mx-auto w-padding"
       >
-        <div class="">
-          <img src="./images/logo2.png" alt="" class="h-28 w-28" />
+        <div class="flex justify-between">
+          <div>
+            <img
+              src="./images/logo.png"
+              alt=""
+              class="md:h-20 md:w-20 h-10 w-10"
+            />
+          </div>
+          <div class="flex md:hidden pr-4">
+            <span class="material-icons-outlined text-white !text-3xl">
+              menu
+            </span>
+          </div>
         </div>
-        <div class="flex gap-16 text-xl items-center">
-          <a href="">
+        <div class="md:flex gap-16 text-xl items-center hidden">
+          <a href="#home">
             <div class="link-text">Home</div>
           </a>
-          <a href="">
+          <a href="#about">
             <div class="link-text">About</div>
           </a>
-          <a href="">
+          <a href="#services">
             <div class="link-text">Services</div>
           </a>
-          <a href="">
-            <div class="link-text">Packages</div>
+          <a href="#gallery">
+            <div class="link-text">Gallery</div>
           </a>
-          <a href="">
+          <a href="#contact">
             <div class="link-text">Contact</div>
           </a>
         </div>
@@ -83,22 +103,26 @@
             aria-label="Slide 4"
           ></button>
         </div>
-        <div class="carousel-inner relative w-full overflow-hidden bg-black">
-          <div class="carousel-item active relative float-left w-full h-screen">
+        <div class="carousel-inner relative w-full overflow-hidden">
+          <div class="carousel-item active relative float-left w-full bg-black">
             <img
               src="./images/banner1.png"
-              class="block w-full opacity-75"
+              class="block w-full h-full lg:h-screen opacity-75"
               alt="..."
             />
             <div class="carousel-caption hidden md:block absolute text-center">
               <h5 class="text-xl">First slide label</h5>
-              <p>
+              <p class="">
                 Some representative placeholder content for the first slide.
               </p>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full h-screen">
-            <img src="./images/banner2.jpeg" class="block w-full" alt="..." />
+          <div class="carousel-item relative float-left w-full bg-black">
+            <img
+              src="./images/banner2.jpeg"
+              class="block w-full h-full lg:h-screen opacity-75"
+              alt="..."
+            />
             <div class="carousel-caption hidden md:block absolute text-center">
               <h5 class="text-xl">Second slide label</h5>
               <p>
@@ -106,8 +130,12 @@
               </p>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full h-screen">
-            <img src="./images/banner2.jpeg" class="block w-full" alt="..." />
+          <div class="carousel-item relative float-left w-full bg-black">
+            <img
+              src="./images/banner2.jpeg"
+              class="block w-full h-full lg:h-screen opacity-75"
+              alt="..."
+            />
             <div class="carousel-caption hidden md:block absolute text-center">
               <h5 class="text-xl">Third slide label</h5>
               <p>
@@ -115,8 +143,12 @@
               </p>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full h-screen">
-            <img src="./images/banner4.jpg" class="block w-full" alt="..." />
+          <div class="carousel-item relative float-left w-full bg-black">
+            <img
+              src="./images/banner1.png"
+              class="block w-full h-full lg:h-screen opacity-75"
+              alt="..."
+            />
             <div class="carousel-caption hidden md:block absolute text-center">
               <h5 class="text-xl">Third slide label</h5>
               <p>
@@ -124,8 +156,12 @@
               </p>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full h-screen">
-            <img src="./images/banner4.jpg" class="block w-full" alt="..." />
+          <div class="carousel-item relative float-left w-full bg-black">
+            <img
+              src="./images/banner1.png"
+              class="block w-full h-full lg:h-screen opacity-75"
+              alt="..."
+            />
             <div class="carousel-caption hidden md:block absolute text-center">
               <h5 class="text-xl">Third slide label</h5>
               <p>
@@ -164,23 +200,37 @@
     <!-- end Carousel -->
 
     <!-- about us -->
-    <div class="w-padding">
-      <div class="max-w gap-12 md:flex mt-28 items-center">
-        <div class="">
+    <div class="w-padding scroll-m-28" id="about">
+      <div class="max-w gap-12 md:flex md:mt-28 mt-12 items-center">
+        <div class="" data-aos="fade-up" data-aos-once="true">
           <img src="./images/about.png" alt="" class="w-[200vh] h-auto" />
         </div>
-        <div class="">
-          <div class="flex items-center gap-2 mt-5">
-            <div class="w-20 h-0.5 bg-[#f04e3c]"></div>
+        <div class="mt-10">
+          <div
+            class="flex items-center gap-2 mt-5 justify-center md:justify-start"
+            data-aos="fade-right"
+            data-aos-once="true"
+          >
+            <div class="w-14 h-0.5 bg-[#f04e3c]"></div>
             <div class="">
-              <h1 class="text-[#f04e3c] text-[18px] md:text-[24px]">
+              <h1 class="text-[#f04e3c] text-[18px] md:text-[24px] uppercase">
                 About Our Gym
               </h1>
             </div>
           </div>
-          <h1 class="h-text mt-5">Growup Fitness</h1>
-          <p class="md:text-[16px] text-[#212025] leading-8 mt-5">
-            Looking for Best Gym in Chitwan Growup Fitness with certified
+          <h1
+            class="h-text mt-5 uppercase text-center md:text-left"
+            data-aos="fade-up"
+            data-aos-once="true"
+          >
+            Grow up Fitness
+          </h1>
+          <p
+            class="md:text-[16px] text-sm text-[#212025] !leading-6 mt-5"
+            data-aos="fade-up"
+            data-aos-once="true"
+          >
+            Looking for Best Gym in Chitwan? Grow Up Fitness with certified
             personal trainers, is waiting for you! We are offering you the
             chance to get fit the fun way with a Free Day Pass! With high
             octane, energetic music, and a fun, motivating environment, Growup
@@ -196,25 +246,40 @@
 
     <!-- services -->
 
-    <div class="bg-section-bg mt-28">
+    <div
+      class="bg-section-bg mt-28 bg-fixed object-cover flex justify-center items-center scroll-m-24 md:h-screen"
+      id="services"
+    >
       <div class="max-w w-padding">
-        <div class="p-10">
-          <div class="flex items-center gap-2 mt-5">
-            <div class="w-20 h-0.5 bg-[#f04e3c]"></div>
+        <div class="py-10">
+          <div
+            class="flex items-center gap-2 mt-5 justify-center md:justify-start"
+            data-aos="fade-right"
+            data-aos-once="true"
+          >
+            <div class="w-14 h-0.5 bg-[#f04e3c]"></div>
             <div class="">
               <h1 class="text-[#f04e3c] text-[18px] md:text-[24px]">
                 OUR SERVICES FOR YOU
               </h1>
             </div>
           </div>
-          <h1 class="h-text text-white">Addicted to getting stronger</h1>
+          <h1
+            class="h-text text-white mt-5 text-center md:text-left"
+            data-aos="fade-right"
+            data-aos-once="true"
+          >
+            Addicted to getting stronger
+          </h1>
 
           <!-- services items -->
 
-          <div class="grid grid-cols-3 gap-10 group">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5"
+          >
             <!-- first item -->
             <div
-              class="bg-white leading-6 p-8 font-Arvo text-sm md:text-[16px] text-center rounded-xl"
+              class="bg-white leading-6 p-8 font-Arvo text-sm md:text-[16px] text-center rounded-xl group"
             >
               <!-- svg -->
               <svg
@@ -233,60 +298,386 @@
                   </g>
                 </g>
               </svg>
-              <h1 class="font-bold text-[#2c234d] text-2xl mt-5 font-Arvo">
-                services1
+              <h1
+                class="font-bold text-[#2c234d] text-3xl font-Teko mt-5 group-hover:text-[#f04e3c] animation"
+                data-aos="fade-up"
+                data-aos-once="true"
+              >
+                Physical Fitness (GYM)
               </h1>
-              <p class="leading-8 font-Arvo text-sm md:text-[16px] mt-5 p-text">
+              <p
+                class="leading-8 text-sm md:text-[16px] mt-5 p-text"
+                data-aos="fade-up"
+                data-aos-once="true"
+              >
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Distinctio nesciunt minus eaque dolorem facilis id, quidem
                 dignissimos nostrum expedita optio?
               </p>
             </div>
             <!-- second item -->
+
             <div
-              class="bg-white leading-6 p-8 font-Arvo text-sm md:text-[16px]"
+              class="bg-white leading-6 p-8 font-Arvo text-sm md:text-[16px] text-center rounded-xl group"
             >
-              <img
-                src="./images/services1.svg"
-                alt=""
-                class="h-[100px] w-[100px]"
-              />
-              <h1 class="font-bold text-[#2c234d] text-2xl mt-5 font-Arvo">
-                services1
+              <!-- svg -->
+
+              <?xml version="1.0" ?><svg
+                class="h-[100px] w-[100px] mx-auto group-hover:text-[#f04e3c] animation"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title />
+                <g id="exercise-cardio-running-treadmill">
+                  <path
+                    d="M223.57,204.07l-37.86-3.31a1.968,1.968,0,0,0-2.16,1.81l-.17,2-48.69-4.26-11.48-1.01-48.04-4.2.18-2a2.006,2.006,0,0,0-1.82-2.17l-2.61-.23a1.739,1.739,0,0,0-.2-.49c-17.23-29.51-18.39-50.97-16.33-63.77a49.251,49.251,0,0,1,5.12-15.56,33.7,33.7,0,0,1,3.02-4.7l56.71,20.97a1.988,1.988,0,0,0,2.68-1.7l.82-9.4a1.992,1.992,0,0,0-.97-1.89L82.109,90.7,60.809,45a2.059,2.059,0,0,0-1.13-1.04,2.027,2.027,0,0,0-1.53.07L50.9,47.41a2.024,2.024,0,0,0-1.04,1.13,1.982,1.982,0,0,0,.07,1.53l9.96,21.36c-3.62,2.78-12.61,11.84-14.55,34.41a1.937,1.937,0,0,0,.13.9c-14.92,20.64-19.71,38.5-20.77,51.14-1.4,16.67,3.08,27.6,4.35,30.32a17.9,17.9,0,0,0-12.96,15.66l-.02.22A17.9,17.9,0,0,0,24,220.54V238a2.006,2.006,0,0,0,2,2H224a2.028,2.028,0,0,0,.95-.24.01.01,0,0,0,.01-.01,18.027,18.027,0,0,0,14.97-16.18c.05-.53.07-1.05.07-1.58A18.018,18.018,0,0,0,223.57,204.07Zm-91.031.06,50.49,4.42-1.75,19.93-108.2-9.47,1.75-19.93Zm-14.37-81.64-55.73-20.61-6.25-2.31c3.49-4.11,7.4-8.31,11.79-12.59l11.51,6.81,39.16,23.17Zm-98.12,81.94.02-.22a13.924,13.924,0,0,1,11.61-12.5,13.575,13.575,0,0,1,2.22-.18c.4,0,.81.02,1.22.05l36.07,3.16-.18,2.01-2.09,23.91-.17,1.97-36.07-3.15a13.621,13.621,0,0,1-5.32-1.59A13.912,13.912,0,0,1,20.049,204.43Zm215.9,18.79A14.034,14.034,0,0,1,222,236c-.4,0-.81-.01-1.22-.05l-35.86-3.14.17-1.99,2.09-23.91.02-.18.16-1.81,35.86,3.13A14.022,14.022,0,0,1,235.95,223.22Z"
+                  />
+                  <path
+                    d="M210.35,158.24l-5.67-23.32a2.009,2.009,0,0,0-.91-1.24,1.954,1.954,0,0,0-1.51-.23l-5.83,1.42a2,2,0,0,0-1,.58l-2.45,2.65a1.319,1.319,0,0,0-.14.19l-15.4,1.749-.235.041-5.2,1.21-3.7-14.65a26.445,26.445,0,0,0,1.3-8.23v-3.22a1.1,1.1,0,0,0,.14-.21,2.044,2.044,0,0,0,0-1.95l-3.99-7.2a16.039,16.039,0,0,1-.9-2.8l8.81-1.82a2.018,2.018,0,0,0,1.5-1.34l1.88-5.85a2.047,2.047,0,0,0,.01-1.2c-2.09-6.81-5.99-17.37-8.71-23.54a.605.605,0,0,0-.07-.14,7.9,7.9,0,0,0-3.57-5.38,32.329,32.329,0,0,1-2.11-15.33c0-.028,0-.056.006-.084a1.657,1.657,0,0,1,1.365-1.566c4.795-.848,9.943-3.421,10.618-9.509l.03-.26a14.442,14.442,0,0,0-.3-4.5,7.733,7.733,0,0,0,1.18-.28c.51.91,1.5,3.62,1.5,10.77,0,10.26,4.2,16.96,8.1,18.85a5.261,5.261,0,0,0,2.26.56,3.656,3.656,0,0,0,2.3-.78c1.02-.81,2.08-2.52,1.29-6.06a28.018,28.018,0,0,1-.2-9.8,48.955,48.955,0,0,0-.79-17.19c-.94-4.37-2.92-7.18-5.87-8.34-3.88-1.53-8.15.41-10.06,1.49a5.319,5.319,0,0,0-.99-.25,6.828,6.828,0,0,0-4.3.88C164.98,18.31,160.36,16,156,16c-6.49,0-13.84,0-16.97,4.63-2.02,3-1.89,7.36.43,13.29-1.15,2.15-3.14,7.93.24,18.9a5.546,5.546,0,0,0,3.69,3.97,6.1,6.1,0,0,0,1.81.26,11.365,11.365,0,0,0,4.41-1.06,82.475,82.475,0,0,0,.75,10.07,22.614,22.614,0,0,0-10.07,17.05l-.62,11.92c-7.05,1.46-6.92,3.6-6.88,4.35.15,2.53,2.16,5.31,4.58,8.43l.62.8a3.8,3.8,0,0,0,.93.86l-.29,5.42-9.11,36.13-.06.437c-.27,10.3-2.38,21.532-6.49,34.273l-1.72-.48a10.986,10.986,0,0,0-13.56,7.64,2,2,0,0,0,1.39,2.47l14.13,3.94h0l8.99,2.51a2.423,2.423,0,0,0,.54.07,2,2,0,0,0,1.92-1.46l.03-.11h0l1.58-5.68a1.961,1.961,0,0,0-.02-1.15l-1.12-3.43a1.191,1.191,0,0,0-.08-.2l9.39-20.8a1.829,1.829,0,0,0,.17-.76l.38-12.75,7.69-8.41,7.37,10.5a5.986,5.986,0,0,0,4.91,2.56,5.791,5.791,0,0,0,2.43-.53,134.116,134.116,0,0,1,27.77-8.83l.42,1.74a11,11,0,0,0,10.68,8.4,11.184,11.184,0,0,0,2.6-.31,2.029,2.029,0,0,0,1.25-.91A2,2,0,0,0,210.35,158.24ZM169.61,83.37c1.31,3.58,2.54,7.14,3.44,10.02l-1.34,4.14-9.45,1.96a1.9,1.9,0,0,0-.36.08l-9.65,1.99-.31-.85-1.02-2.81,14.72-5.01a2,2,0,1,0-1.28-3.78l-1.84.62-1.41-2.49Zm-25.04-30.4c-.21-.07-.7-.22-1.04-1.33-3.41-11.1-.62-15.76-.35-16.16,5.32-.35,10.46-.15,12.3.45-1.8,4.74,1.27,9.94,1.41,10.17a1.981,1.981,0,0,0,1.56.97c.16.01.33.03.51.03a1.838,1.838,0,0,0-.34.93,37.3,37.3,0,0,0,1.39,14.5,4.291,4.291,0,0,0-.9.09,22.372,22.372,0,0,0-4.97,1.43,74.6,74.6,0,0,1-.53-9.76,1.574,1.574,0,0,0-.06-.53c.62-.43,1.07-.78,1.31-.97a2,2,0,1,0-2.49-3.12C150.28,51.33,146.359,53.52,144.57,52.97ZM137,100.01a32.379,32.379,0,0,1,4.97-1.33c.12-.02.23-.04.34-.06a2,2,0,0,0,1.3-.79l1.1-1.51,1.94,1.56,1.81,4.97-6.85,3.27a.536.536,0,0,1-.43.05.035.035,0,0,1-.02-.01l-.63-.81A27.441,27.441,0,0,1,137,100.01Zm-24.64,92.11a7.013,7.013,0,0,1,5.92-3.28,7.235,7.235,0,0,1,1.89.26l3.46.97,8.03,2.24v.01l.6,1.82-.91,3.28Zm29.18-38.73a1.981,1.981,0,0,0-.52,1.29l-.39,13.09-9.18,20.33-4.62-1.29c4.15-12.95,6.32-24.43,6.62-35.03l4.85-19.22a29.2,29.2,0,0,0,14.47,8.55Zm24.21,2.63a1.972,1.972,0,0,1-2.43-.69l-7.29-10.39,4.72-6.62c.4-.35.78-.72,1.15-1.1.2-.2.4-.41.59-.62.17-.18.34-.38.52-.57a1.326,1.326,0,0,0,.11-.14q.255-.285.48-.57a24.423,24.423,0,0,0,1.56-2.11c.17-.25.33-.51.49-.77l2.96,11.73a2.015,2.015,0,0,0,2.4,1.46L178,144l15.08-1.72,1.13,4.66A137.572,137.572,0,0,0,165.75,156.02Zm33.72-4.4-.88-3.61-1.94-7.98v-.01l1.31-1.41,3.3-.8,4.66,19.15A7,7,0,0,1,199.47,151.62Z"
+                  />
+                </g>
+              </svg>
+
+              <h1
+                class="font-bold text-[#2c234d] text-3xl font-Teko mt-5 group-hover:text-[#f04e3c] animation"
+                data-aos="fade-up"
+                data-aos-once="true"
+              >
+                Cardio
               </h1>
-              <p class="leading-6 font-Arvo text-sm md:text-[16px]">
+              <p
+                class="leading-8 text-sm md:text-[16px] mt-5 p-text"
+                data-aos="fade-up"
+                data-aos-once="true"
+              >
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Distinctio nesciunt minus eaque dolorem facilis id, quidem
                 dignissimos nostrum expedita optio?
               </p>
             </div>
+
             <!-- third item -->
+
             <div
-              class="bg-white leading-6 p-8 font-Arvo text-sm md:text-[16px]"
+              class="bg-white leading-6 p-8 font-Arvo text-sm md:text-[16px] text-center rounded-xl group"
             >
-              <img
-                src="./images/services1.svg"
-                alt=""
-                class="h-[100px] w-[100px]"
-              />
-              <h1 class="font-bold text-[#2c234d] text-2xl mt-5 font-Arvo">
-                services1
+              <!-- svg -->
+
+              <?xml version="1.0" ?><svg
+                class="h-[100px] w-[100px] mx-auto group-hover:text-[#f04e3c] animation"
+                fill="currentColor"
+                viewBox="0 0 64 64"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.057 16.11c-.368.323-1.47 1.334-1.61 2.852-.136 1.517.553 2.712.783 2.988.23.276 1.15-.184 1.057-.69-.092-.506-.368-.322-.414-1.84-.046-1.516 1.057-2.62 1.103-2.896.046-.275-.71-.595-.92-.413zM9.81 12.57c.505-1.195.78-4.828.918-4.874.138-.046 2.252 1.287 2.62 1.333.368.045 1.38-2.576 1.38-3.036 0-.46-3.02-2.973-3.448-2.76-.735.37-2.987 6.99-2.987 6.99s-3.63-.782-4.136.736c-.506 1.517.23 2.85 1.976 3.218 1.746.37 3.17-.412 3.676-1.608zm4.687 31.45c-.046.46 3.033 5.747 3.033 5.747-.965-.092-2.666-.092-3.355 1.38-.69 1.47.69 3.77 2.71 3.034 2.023-.735 1.15-2.482 1.15-2.482s1.195.414 1.47-.414c.277-.828-3.676-7.77-4.043-7.954-.368-.184-.92.23-.965.69zM34.58 9.122c.827.552 2.94.276 3.447-.368.506-.644 1.517-6.483 1.517-6.483s1.654 1.104 1.93.83c.276-.277.276-.37.276-.83 0-.46-2.895-2.482-3.263-2.252-.368.23-1.425 5.793-1.425 5.793-.506-.367-1.884-.55-2.803.415-.92.966-.508 2.345.32 2.897zm21.875 22.943c-1.287-.184-18.107 6.3-18.245 6.3-.138 0-3.998-7.633-4.274-8.14-.276-.505 10.478-8.275 10.524-8.597.046-.322.506-7.862 0-8.506-.506-.644-6.388-.092-6.848.276-.46.368-.368 5.977-.735 6.62-.368.645-6.526 4.875-7.077 4.875s-2.85-.46-2.85-.46c2.023-1.47 2.666-5.426 2.115-7.724-.55-2.3-4.136-6.53-9.375-4.6s-6.158 6.07-4.504 9.84c1.654 3.77 6.71 4.322 6.71 4.322 0 .368-.643 3.218-1.057 3.494-.415.276-8.733-.506-9.008-.644-.276-.138-1.195-3.77-2.022-6.207s-2.252-2.07-2.85-2.023c-.597.046-2.02.598-2.297 1.517-.276.92 1.654 11.953 1.654 11.953s18.2 2.207 18.704 2.3c.507.09 5.608 8.275 5.608 8.597 0 .322-.368 13.058-.368 13.196 0 .138-2.022.23-2.436.138-.414-.092-1.608.23-1.838 1.103-.23.874.276 3.908.276 3.908 1.976.874 10.11.092 10.386-.414.276-.505 1.517-16.78 1.93-17.287.414-.506 19.99-6.99 20.13-7.08.137-.093-.047-3.22-.37-4.185-.32-.964-.596-2.39-1.883-2.573zM20.057 14.363c2.646-1.312 4.733-.598 6.066 1.885 1.333 2.483 1.746 7.494-3.814 7.816s-7.72-6.988-2.253-9.7zm36.49 22.898c-.138.46-19.99 7.036-20.543 7.955-.55.92-.735 16.506-1.287 16.736-.55.23-6.802.783-6.893.37-.092-.415-.322-1.886-.046-1.886s4.55-.644 4.55-.828c0-.184.322-15.035.276-15.54-.046-.507-5.79-8.967-6.25-9.29-.46-.32-17.923-1.654-18.245-2.022-.323-.368-1.84-8.874-.874-9.288.514-.22 1.195 3.127 2.068 5.333.873 2.206 1.01 2.344 1.792 2.574.78.23 8.824.092 10.064.092 1.24 0 2.068-.644 2.252-.92.184-.276.55-2.805 1.333-3.173.78-.368 3.31-1.287 3.63-1.103.323.184 1.196 1.287 1.518 1.15.322-.14 9.1-6.162 9.237-6.622.138-.46-.414-5.61.23-5.977.643-.367 2.757-.367 2.895-.045.138.322.322 5.517.092 5.84-.23.32-11.167 8.183-11.167 8.78 0 .6 5.24 11.91 6.48 11.772 1.24-.138 18.107-7.127 18.29-7.035.183.094.735 2.67.597 3.13zm3.263-20c-.55-.92-7.858-2.76-8.272-2.667-.414.092.002 6.983-.322 6.897-1.38-.368-2.895.138-3.263.644-.368.506-.92 2.53.276 3.173 1.194.644 3.905.138 4.227-.552.322-.69.138-5.655.138-5.655s5.147 1.885 5.33 2.16c.185.277 0 2.024 0 2.024s-.642-.46-1.79-.23c-1.15.23-1.655 1.517-1.196 3.22.46 1.7 3.813 1.148 4.227.69.413-.462 1.194-8.784.643-9.704zm-1.61 2.76c-.413-.23-5.468-2.162-5.56-2.346-.092-.184-.092-1.287.184-1.38.222-.073 5.423 1.564 5.47 1.886s.32 2.07-.093 1.84zM26.4 30.27c-.598-.23-1.104.414-1.104.644 0 .23 1.057 1.93 1.562 2.3.506.367.643-.323.643-.6s-.637-2.165-1.1-2.344z"
+                />
+              </svg>
+
+              <h1
+                class="font-bold text-[#2c234d] text-3xl font-Teko mt-5 group-hover:text-[#f04e3c] animation"
+                data-aos="fade-up"
+                data-aos-once="true"
+              >
+                Zumba/Arobic
               </h1>
-              <p class="leading-6 font-Arvo text-sm md:text-[16px]">
+              <p
+                class="leading-8 text-sm md:text-[16px] mt-5 p-text"
+                data-aos="fade-up"
+                data-aos-once="true"
+              >
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Distinctio nesciunt minus eaque dolorem facilis id, quidem
                 dignissimos nostrum expedita optio?
               </p>
             </div>
           </div>
-
+          <div class="text-center mt-10">
+            <button
+              class="bg-red-700 text-white py-2 px-5 rounded-md mx-auto hover:bg-red-500 animation"
+            >
+              More Services
+            </button>
+          </div>
           <!-- end of services items -->
         </div>
       </div>
     </div>
 
+    <!-- gallery -->
+    <div
+      class="max-w w-padding md:mt-28 mt-16 scroll-m-40"
+      id="gallery"
+      data-aos="fade-up"
+      data-aos-once="true"
+    >
+      <h1 class="h-text mt-5 text-center md:text-left">Our gallery</h1>
+      <section class="overflow-hidden text-gray-700 mt-10">
+        <div class="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
+          <div
+            class="md:flex-row flex flex-col justify-center items-center flex-wrap -m-1 md:-m-2"
+          >
+            <div class="flex flex-wrap md:w-1/2">
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block object-cover object-center w-full h-full rounded-lg"
+                  src="./images/about.png"
+                />
+              </div>
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block object-cover object-center w-full h-full rounded-lg"
+                  src="./images/about1.jpg"
+                />
+              </div>
+              <div class="w-full p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block object-cover object-center w-full h-full rounded-lg"
+                  src="./images/banner1.png"
+                />
+              </div>
+            </div>
+            <div class="flex flex-wrap md:w-1/2">
+              <div class="w-full p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block object-cover object-center w-full h-full rounded-lg"
+                  src="./images/banner2.jpeg"
+                />
+              </div>
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block object-cover object-center w-full h-full rounded-lg"
+                  src="./images/banner4.jpg"
+                />
+              </div>
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block object-cover object-center w-full h-full rounded-lg"
+                  src="./images/about.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- contact -->
+
+    <div data-aos="fade-up" data-aos-once="true" class="">
+      <h1
+        class="h-text text-center mt-28"
+        id="contact"
+        data-aos="fade-right"
+        data-aos-once="true"
+      >
+        Get in touch
+      </h1>
+      <div
+        class="relative flex items-top justify-center sm:items-center sm:pt-0 md:mt-10 p-3"
+      >
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+          <div class="mt-8 overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
+                <p
+                  class="text-normal md:text-xl text-sm font-bold p-text mt-2"
+                  data-aos="fade-right"
+                  data-aos-once="true"
+                >
+                  Send us a general enquiry, suggestions or leave some feedback,
+                  we'd love to hear from you.
+                </p>
+                <div
+                  class="flex items-center mt-8 text-gray-600 dark:text-gray-400 lg:text-base"
+                >
+                  <span class="material-icons-outlined"> place </span>
+                  <div
+                    class="ml-4 tracking-wide font-semibold"
+                    data-aos="fade-right"
+                    data-aos-once="true"
+                  >
+                    Saptagandaki Chowk, Bharatpur-10, Chitwan Nepal
+                  </div>
+                </div>
+                <div
+                  class="flex items-center mt-4 text-gray-600 dark:text-gray-400"
+                >
+                  <span class="material-icons-outlined"> phone </span>
+                  <div
+                    class="ml-4 md:text-base text-sm tracking-wide font-semibold w-40"
+                    data-aos="fade-right"
+                    data-aos-once="true"
+                  >
+                    981-4012248
+                  </div>
+                </div>
+                <div
+                  class="flex items-center mt-2 text-gray-600 dark:text-gray-400"
+                >
+                  <span class="material-icons-outlined"> email </span>
+
+                  <div
+                    class="ml-4 md:text-base text-sm tracking-wide font-semibold w-40"
+                    data-aos="fade-right"
+                    data-aos-once="true"
+                  >
+                    growupfitness@gmail.com
+                  </div>
+                </div>
+              </div>
+              <form class="p-6 flex flex-col justify-center">
+                <div class="flex flex-col">
+                  <label for="name" class="hidden">Full Name</label>
+                  <input
+                    type="name"
+                    name="name"
+                    id="name"
+                    placeholder="Full Name"
+                    class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  />
+                </div>
+                <div class="flex flex-col mt-2">
+                  <label for="email" class="hidden">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                    class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  />
+                </div>
+                <div class="flex flex-col mt-2">
+                  <label for="message" class="hidden">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Your Message"
+                    class="mt-2 px-3 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                    rows="6"
+                    cols="4"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="md:w-32 bg-indigo-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end contact -->
+
+    <!-- footer -->
+
+    <!-- end footer -->
+
+    <!-- packages -->
+    <!-- <div class="max-w w-padding mt-28">
+      <div class="flex items-center gap-2 mt-5">
+        <div class="w-14 h-0.5 bg-[#f04e3c]"></div>
+        <div class="">
+          <h1 class="text-[#f04e3c] text-[18px] md:text-[24px]">Price Plan</h1>
+        </div>
+      </div>
+      <h1 class="h-text mt-5">Our Pricing Plans</h1>
+      <div class="grid grid-cols-3 gap-10">
+        
+        <div class="">
+          <div class="bg-[#1D3D63] rounded-t-3xl mt-5">
+            <h1
+              class="font-bold text-white text-3xl font-Teko text-center py-3"
+            >
+              12 Month
+            </h1>
+          </div>
+          <div
+            class="text-center py-5 border-gray-400 border-2 border-t-0 rounded-b-xl"
+          >
+            <p class="text-[36px] font-Teko font-bold text-[#315E97]">
+              Rs. 1,000
+            </p>
+            <ul class="p-text space-y-5 mt-5">
+              <li>Traning Overview</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="bg-[#1D3D63] rounded-t-3xl mt-5">
+            <h1
+              class="font-bold text-white text-3xl font-Teko text-center py-3"
+            >
+              12 Month
+            </h1>
+          </div>
+          <div
+            class="text-center py-5 border-gray-400 border-2 border-t-0 rounded-b-xl"
+          >
+            <p class="text-[36px] font-Teko font-bold text-[#315E97]">
+              Rs. 1,000
+            </p>
+            <ul class="p-text space-y-5 mt-5">
+              <li>Traning Overview</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="">
+          <div class="bg-[#1D3D63] rounded-t-3xl mt-5">
+            <h1
+              class="font-bold text-white text-3xl font-Teko text-center py-3"
+            >
+              12 Month
+            </h1>
+          </div>
+          <div
+            class="text-center py-5 border-gray-400 border-2 border-t-0 rounded-b-xl"
+          >
+            <p class="text-[36px] font-Teko font-bold text-[#315E97]">
+              Rs. 1,000
+            </p>
+            <ul class="p-text space-y-5 mt-5">
+              <li>Traning Overview</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+              <li>Personal Training</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     <!-- script -->
+
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- navigation -->
     <script>
       window.addEventListener("scroll", () => {
         if (pageYOffset > 0) {
