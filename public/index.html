@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GYM</title>
+
     <link rel="stylesheet" href="output.css" />
     <!-- aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -21,27 +22,18 @@
       href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
   </head>
-  <body id="home">
+  <body id="home" class="overflow-x-hidden">
     <!-- nav bar -->
-    <nav class="bg-transparent fixed w-full top-0 z-50 animation py-3" id="nav">
+    <nav class="fixed top-0 z-50 w-full py-3 bg-transparent animation" id="nav">
       <div
         class="flex justify-between items-center max-w-[1400px] mx-auto w-padding"
       >
-        <div class="flex justify-between">
-          <div>
-            <img
-              src="./images/logo.png"
-              alt=""
-              class="md:h-20 md:w-20 h-10 w-10"
-            />
-          </div>
-          <div class="flex md:hidden pr-4">
-            <span class="material-icons-outlined text-white !text-3xl">
-              menu
-            </span>
+        <div class="flex justify-end">
+          <div class="w-10 lg:!w-20">
+            <img src="./images/logo.png" alt="" class="w-full" />
           </div>
         </div>
-        <div class="md:flex gap-16 text-xl items-center hidden">
+        <div class="items-center hidden gap-16 text-xl md:flex">
           <a href="#home">
             <div class="link-text">Home</div>
           </a>
@@ -58,17 +50,91 @@
             <div class="link-text">Contact</div>
           </a>
         </div>
+        <div class="md:hidden block">
+          <a onclick="toggleSidebar()">
+            <span class="material-icons-outlined text-white text-3xl">
+              menu
+            </span>
+          </a>
+        </div>
+        <!-- off canvas -->
+        <div
+          class="fixed top-0 left-0 w-full opacity-30 h-full bg-[#333333] hidden"
+          id="sidebar_black"
+          onclick="toggleSidebar()"
+        ></div>
+        <sidebar
+          class="fixed top-0 left-0 animation bg-[#F5FFFA] w-[70%] md:w-96 h-full -translate-x-full"
+          id="sidebar"
+        >
+          <div class="absolute right-2 top-2" onclick="toggleSidebar()">
+            <span class="material-icons-outlined !text-3xl"> close </span>
+          </div>
+          <div class="flex flex-col space-y-5 justify-center mt-10 ml-7">
+            <!-- <a href="#contact" onclick="toggleSidebar()">contact</a> -->
+
+            <div class="inline-flex">
+              <img src="./images/logo.png" alt="" class="w-20 bg-gray-600" />
+            </div>
+            <a href="#home" onclick="toggleSidebar()">
+              <div class="nav-text">Home</div>
+            </a>
+            <a href="#about" onclick="toggleSidebar()">
+              <div class="nav-text">About</div>
+            </a>
+            <a href="#services" onclick="toggleSidebar()">
+              <div class="nav-text">Services</div>
+            </a>
+            <a href="#gallery" onclick="toggleSidebar()">
+              <div class="nav-text">Gallery</div>
+            </a>
+            <a href="#contact" onclick="toggleSidebar()">
+              <div class="nav-text">Contact</div>
+            </a>
+            <div class="flex gap-3">
+              <a
+                href="https://www.facebook.com/GrowUpFitnessClubOfficial"
+                target="_blank"
+                onclick="toggleSidebar()"
+              >
+                <div class="hover:text-[#E74D01]">
+                  <img
+                    src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
+                    class="h-8 w-8"
+                  />
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com/growupfitnessclub/"
+                target="_blank"
+                onclick="toggleSidebar()"
+              >
+                <div class="hover:text-[#E74D01]">
+                  <img
+                    src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+                    class="h-8 w-8"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="flex gap-1 items-center">
+              <span class="material-icons-outlined text-red-400"> phone </span>
+              <div class="nav-text">981-4012248</div>
+            </div>
+          </div>
+        </sidebar>
+        <!-- off canvas end here  -->
       </div>
     </nav>
     <!-- Carousel -->
     <header>
       <div
         id="carouselExampleCaptions"
-        class="carousel slide relative"
+        class="relative carousel slide"
         data-bs-ride="carousel"
       >
         <div
-          class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4"
+          class="absolute bottom-0 left-0 right-0 flex justify-center p-0 mb-4 carousel-indicators"
         >
           <button
             type="button"
@@ -103,93 +169,98 @@
             aria-label="Slide 4"
           ></button>
         </div>
-        <div class="carousel-inner relative w-full overflow-hidden">
-          <div class="carousel-item active relative float-left w-full bg-black">
+        <div class="relative w-full overflow-hidden carousel-inner">
+          <div class="relative float-left w-full bg-black carousel-item active">
             <img
               src="./images/banner1.png"
-              class="block w-full h-full lg:h-screen opacity-75"
+              class="block object-cover w-full h-full opacity-75 lg:h-screen"
               alt="..."
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">First slide label</h5>
-              <p class="">
-                Some representative placeholder content for the first slide.
-              </p>
+            <div
+              class="absolute text-center carousel-caption top-1/2 bottom-1/2"
+            >
+              <h5 class="md:text-[5rem] text-[2rem] font-Teko">
+                First slide label
+              </h5>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full bg-black">
+          <div class="relative float-left w-full bg-black carousel-item">
             <img
               src="./images/banner2.jpeg"
-              class="block w-full h-full lg:h-screen opacity-75"
+              class="block object-cover w-full h-full opacity-75 lg:h-screen"
               alt="..."
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
+            <div
+              class="absolute text-center carousel-caption top-1/2 bottom-1/2"
+            >
+              <h5 class="md:text-[5rem] text-[2rem] font-Teko">
+                Second slide label
+              </h5>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full bg-black">
+          <div class="relative float-left w-full bg-black carousel-item">
             <img
               src="./images/banner2.jpeg"
-              class="block w-full h-full lg:h-screen opacity-75"
+              class="block object-cover w-full h-full opacity-75 lg:h-screen"
               alt="..."
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
+            <div
+              class="absolute text-center carousel-caption top-1/2 bottom-1/2"
+            >
+              <h5 class="md:text-[5rem] text-[2rem] font-Teko">
+                Third slide label
+              </h5>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full bg-black">
+          <div class="relative float-left w-full bg-black carousel-item">
             <img
               src="./images/banner1.png"
-              class="block w-full h-full lg:h-screen opacity-75"
+              class="block object-cover w-full h-full opacity-75 lg:h-screen"
               alt="..."
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
+            <div
+              class="absolute text-center carousel-caption top-1/2 bottom-1/2"
+            >
+              <h5 class="md:text-[5rem] text-[2rem] font-Teko">
+                fourth slide label
+              </h5>
             </div>
           </div>
-          <div class="carousel-item relative float-left w-full bg-black">
+          <div class="relative float-left w-full bg-black carousel-item">
             <img
               src="./images/banner1.png"
-              class="block w-full h-full lg:h-screen opacity-75"
+              class="block object-cover w-full h-full opacity-75 lg:h-screen"
               alt="..."
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
+            <div
+              class="absolute text-center carousel-caption top-1/2 bottom-1/2"
+            >
+              <h5 class="md:text-[5rem] text-[2rem] font-Teko">
+                fifth slide label
+              </h5>
             </div>
           </div>
         </div>
         <button
-          class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+          class="absolute top-0 bottom-0 left-0 flex items-center justify-center p-0 text-center border-0 carousel-control-prev hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
           <span
-            class="carousel-control-prev-icon inline-block bg-no-repeat"
+            class="inline-block bg-no-repeat carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-center p-0 text-center border-0 carousel-control-next hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
           <span
-            class="carousel-control-next-icon inline-block bg-no-repeat"
+            class="inline-block bg-no-repeat carousel-control-next-icon"
             aria-hidden="true"
           ></span>
           <span class="visually-hidden">Next</span>
@@ -201,13 +272,13 @@
 
     <!-- about us -->
     <div class="w-padding scroll-m-28" id="about">
-      <div class="max-w gap-12 md:flex md:mt-28 mt-12 items-center">
+      <div class="items-center gap-12 mt-12 max-w md:flex md:mt-28">
         <div class="" data-aos="fade-up" data-aos-once="true">
           <img src="./images/about.png" alt="" class="w-[200vh] h-auto" />
         </div>
         <div class="mt-10">
           <div
-            class="flex items-center gap-2 mt-5 justify-center md:justify-start"
+            class="flex items-center justify-center gap-2 mt-5 md:justify-start"
             data-aos="fade-right"
             data-aos-once="true"
           >
@@ -219,7 +290,7 @@
             </div>
           </div>
           <h1
-            class="h-text mt-5 uppercase text-center md:text-left"
+            class="mt-5 text-center uppercase h-text md:text-left"
             data-aos="fade-up"
             data-aos-once="true"
           >
@@ -247,13 +318,13 @@
     <!-- services -->
 
     <div
-      class="bg-section-bg mt-28 bg-fixed object-cover flex justify-center items-center scroll-m-24 md:h-screen"
+      class="flex items-center justify-center object-cover bg-fixed bg-section-bg mt-28 scroll-m-24 md:h-screen"
       id="services"
     >
       <div class="max-w w-padding">
         <div class="py-10">
           <div
-            class="flex items-center gap-2 mt-5 justify-center md:justify-start"
+            class="flex items-center justify-center gap-2 mt-5 md:justify-start"
             data-aos="fade-right"
             data-aos-once="true"
           >
@@ -265,7 +336,7 @@
             </div>
           </div>
           <h1
-            class="h-text text-white mt-5 text-center md:text-left"
+            class="mt-5 text-center text-white h-text md:text-left"
             data-aos="fade-right"
             data-aos-once="true"
           >
@@ -275,7 +346,7 @@
           <!-- services items -->
 
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5"
+            class="grid grid-cols-1 gap-10 mt-5 md:grid-cols-2 lg:grid-cols-3"
           >
             <!-- first item -->
             <div
@@ -393,9 +464,9 @@
               </p>
             </div>
           </div>
-          <div class="text-center mt-10">
+          <div class="mt-10 text-center">
             <button
-              class="bg-red-700 text-white py-2 px-5 rounded-md mx-auto hover:bg-red-500 animation"
+              class="px-5 py-2 mx-auto text-white bg-red-700 rounded-md hover:bg-red-500 animation"
             >
               More Services
             </button>
@@ -407,59 +478,59 @@
 
     <!-- gallery -->
     <div
-      class="max-w w-padding md:mt-28 mt-16 scroll-m-40"
+      class="mt-16 max-w w-padding md:mt-28 scroll-m-40"
       id="gallery"
       data-aos="fade-up"
       data-aos-once="true"
     >
-      <h1 class="h-text mt-5 text-center md:text-left">Our gallery</h1>
-      <section class="overflow-hidden text-gray-700 mt-10">
+      <h1 class="mt-5 text-center h-text md:text-left">Our gallery</h1>
+      <section class="mt-10 text-gray-700">
         <div class="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
           <div
-            class="md:flex-row flex flex-col justify-center items-center flex-wrap -m-1 md:-m-2"
+            class="flex flex-col flex-wrap items-center justify-center -m-1 md:flex-row md:-m-2"
           >
             <div class="flex flex-wrap md:w-1/2">
-              <div class="w-1/2 p-1 md:p-2">
+              <div class="w-1/2 p-1 md:p-2 overflow-hidden">
                 <img
                   alt="gallery"
-                  class="block object-cover object-center w-full h-full rounded-lg"
+                  class="gallery-image"
                   src="./images/about.png"
                 />
               </div>
-              <div class="w-1/2 p-1 md:p-2">
+              <div class="w-1/2 p-1 md:p-2 overflow-hidden">
                 <img
                   alt="gallery"
-                  class="block object-cover object-center w-full h-full rounded-lg"
+                  class="gallery-image"
                   src="./images/about1.jpg"
                 />
               </div>
-              <div class="w-full p-1 md:p-2">
+              <div class="w-full p-1 md:p-2 overflow-hidden">
                 <img
                   alt="gallery"
-                  class="block object-cover object-center w-full h-full rounded-lg"
+                  class="gallery-image"
                   src="./images/banner1.png"
                 />
               </div>
             </div>
             <div class="flex flex-wrap md:w-1/2">
-              <div class="w-full p-1 md:p-2">
+              <div class="w-full p-1 md:p-2 overflow-hidden">
                 <img
                   alt="gallery"
-                  class="block object-cover object-center w-full h-full rounded-lg"
+                  class="gallery-image"
                   src="./images/banner2.jpeg"
                 />
               </div>
-              <div class="w-1/2 p-1 md:p-2">
+              <div class="w-1/2 p-1 md:p-2 overflow-hidden">
                 <img
                   alt="gallery"
-                  class="block object-cover object-center w-full h-full rounded-lg"
+                  class="gallery-image"
                   src="./images/banner4.jpg"
                 />
               </div>
-              <div class="w-1/2 p-1 md:p-2">
+              <div class="w-1/2 p-1 md:p-2 overflow-hidden">
                 <img
                   alt="gallery"
-                  class="block object-cover object-center w-full h-full rounded-lg"
+                  class="gallery-image"
                   src="./images/about.png"
                 />
               </div>
@@ -473,7 +544,7 @@
 
     <div data-aos="fade-up" data-aos-once="true" class="">
       <h1
-        class="h-text text-center mt-28"
+        class="text-center h-text mt-28"
         id="contact"
         data-aos="fade-right"
         data-aos-once="true"
@@ -481,14 +552,14 @@
         Get in touch
       </h1>
       <div
-        class="relative flex items-top justify-center sm:items-center sm:pt-0 md:mt-10 p-3"
+        class="relative flex justify-center p-3 items-top sm:items-center sm:pt-0 md:mt-10"
       >
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
           <div class="mt-8 overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-2">
               <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
                 <p
-                  class="text-normal md:text-xl text-sm font-bold p-text mt-2"
+                  class="mt-2 text-sm font-bold text-normal md:text-xl p-text"
                   data-aos="fade-right"
                   data-aos-once="true"
                 >
@@ -500,7 +571,7 @@
                 >
                   <span class="material-icons-outlined"> place </span>
                   <div
-                    class="ml-4 tracking-wide font-semibold"
+                    class="ml-4 font-semibold tracking-wide"
                     data-aos="fade-right"
                     data-aos-once="true"
                   >
@@ -512,7 +583,7 @@
                 >
                   <span class="material-icons-outlined"> phone </span>
                   <div
-                    class="ml-4 md:text-base text-sm tracking-wide font-semibold w-40"
+                    class="w-40 ml-4 text-sm font-semibold tracking-wide md:text-base"
                     data-aos="fade-right"
                     data-aos-once="true"
                   >
@@ -525,15 +596,39 @@
                   <span class="material-icons-outlined"> email </span>
 
                   <div
-                    class="ml-4 md:text-base text-sm tracking-wide font-semibold w-40"
+                    class="w-40 ml-4 text-sm font-semibold tracking-wide md:text-base"
                     data-aos="fade-right"
                     data-aos-once="true"
                   >
                     growupfitness@gmail.com
                   </div>
                 </div>
+                <div class="flex gap-3 mt-5">
+                  <a
+                    href="https://www.facebook.com/GrowUpFitnessClubOfficial"
+                    target="_blank"
+                  >
+                    <div class="hover:text-[#E74D01]">
+                      <img
+                        src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
+                        class="w-8 h-8"
+                      />
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/growupfitnessclub/"
+                    target="_blank"
+                  >
+                    <div class="hover:text-[#E74D01]">
+                      <img
+                        src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+                        class="w-8 h-8"
+                      />
+                    </div>
+                  </a>
+                </div>
               </div>
-              <form class="p-6 flex flex-col justify-center">
+              <form class="flex flex-col justify-center p-6">
                 <div class="flex flex-col">
                   <label for="name" class="hidden">Full Name</label>
                   <input
@@ -541,7 +636,7 @@
                     name="name"
                     id="name"
                     placeholder="Full Name"
-                    class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                    class="px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg w-100 dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
                 <div class="flex flex-col mt-2">
@@ -551,7 +646,7 @@
                     name="email"
                     id="email"
                     placeholder="Email"
-                    class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                    class="px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg w-100 dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
                 <div class="flex flex-col mt-2">
@@ -560,14 +655,14 @@
                     name="message"
                     id="message"
                     placeholder="Your Message"
-                    class="mt-2 px-3 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                    class="px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
                     rows="6"
                     cols="4"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  class="md:w-32 bg-indigo-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500"
+                  class="px-6 py-3 mt-3 font-bold text-white bg-indigo-700 rounded-lg md:w-32 hover:bg-blue-dark hover:bg-indigo-500"
                 >
                   Submit
                 </button>
@@ -582,6 +677,93 @@
 
     <!-- footer -->
 
+    <div class="bg-[#333333] max-h-md w-screen mt-28 text-white">
+      <div
+        class="md:flex-row flex flex-col items-center justify-center gap-20 px-5 py-16 xl:gap-40 lg:!items-start"
+      >
+        <div class="">
+          <h1
+            class="mb-5 text-xl font-bold text-center uppercase font-Poppins text-h-color"
+          >
+            contact us
+          </h1>
+          <div
+            class="flex flex-col items-center justify-center gap-5 text-white font-Arvo font-semibold text-center"
+          >
+            <img src="./images/logo.png" class="w-20 h-20" alt="" />
+            <p class="">Saptagandaki Chowk Bharatpur-10, Chitwan Nepal</p>
+            <p class="">985-5001067</p>
+            <p class="">growupfitness@gmail.com</p>
+            <div class="flex gap-3">
+              <a
+                href="https://www.facebook.com/GrowUpFitnessClubOfficial"
+                target="_blank"
+              >
+                <div class="hover:text-[#E74D01]">
+                  <img
+                    src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
+                    class="w-8 h-8"
+                  />
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com/growupfitnessclub/"
+                target="_blank"
+              >
+                <div class="hover:text-[#E74D01]">
+                  <img
+                    src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+                    class="w-8 h-8"
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <h1
+            class="mb-5 text-xl font-bold text-center uppercase font-Poppins text-h-color"
+          >
+            Navigation
+          </h1>
+          <a href="">
+            <p class="mt-5 font-semibold text-white text-md font-Arvo">Home</p>
+          </a>
+          <a href="#about">
+            <p class="mt-3 font-semibold text-white text-md font-Arvo">About</p>
+          </a>
+          <a href="#services">
+            <p class="mt-3 font-semibold text text-md font-Arvo">Services</p>
+          </a>
+          <a href="#gallery">
+            <p class="mt-3 font-semibold text-white text-md font-Arvo">
+              Gallery
+            </p>
+          </a>
+          <a href="#contact">
+            <p class="mt-3 font-semibold text-white text-md font-Arvo">
+              Contact
+            </p>
+          </a>
+        </div>
+        <div class="">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.0645812704465!2d84.43182001559089!3d27.68439878280142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb8068d7e5d1%3A0x7d08f56d182aa9a4!2sGrow%20Up%20Fitness%20Club!5e0!3m2!1sen!2snp!4v1646199230803!5m2!1sen!2snp"
+            class="w-auto h-auto"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+      <h1
+        class="py-5 mt-8 font-semibold text-center text-white border-t border-gray-300 text-md font-Arvo"
+      >
+        &copy; 2022 GrowUpfitness. All Rights Reserved
+      </h1>
+    </div>
+
     <!-- end footer -->
 
     <!-- packages -->
@@ -592,24 +774,24 @@
           <h1 class="text-[#f04e3c] text-[18px] md:text-[24px]">Price Plan</h1>
         </div>
       </div>
-      <h1 class="h-text mt-5">Our Pricing Plans</h1>
+      <h1 class="mt-5 h-text">Our Pricing Plans</h1>
       <div class="grid grid-cols-3 gap-10">
         
         <div class="">
           <div class="bg-[#1D3D63] rounded-t-3xl mt-5">
             <h1
-              class="font-bold text-white text-3xl font-Teko text-center py-3"
+              class="py-3 text-3xl font-bold text-center text-white font-Teko"
             >
               12 Month
             </h1>
           </div>
           <div
-            class="text-center py-5 border-gray-400 border-2 border-t-0 rounded-b-xl"
+            class="py-5 text-center border-2 border-t-0 border-gray-400 rounded-b-xl"
           >
             <p class="text-[36px] font-Teko font-bold text-[#315E97]">
               Rs. 1,000
             </p>
-            <ul class="p-text space-y-5 mt-5">
+            <ul class="mt-5 space-y-5 p-text">
               <li>Traning Overview</li>
               <li>Personal Training</li>
               <li>Personal Training</li>
@@ -622,18 +804,18 @@
         <div class="">
           <div class="bg-[#1D3D63] rounded-t-3xl mt-5">
             <h1
-              class="font-bold text-white text-3xl font-Teko text-center py-3"
+              class="py-3 text-3xl font-bold text-center text-white font-Teko"
             >
               12 Month
             </h1>
           </div>
           <div
-            class="text-center py-5 border-gray-400 border-2 border-t-0 rounded-b-xl"
+            class="py-5 text-center border-2 border-t-0 border-gray-400 rounded-b-xl"
           >
             <p class="text-[36px] font-Teko font-bold text-[#315E97]">
               Rs. 1,000
             </p>
-            <ul class="p-text space-y-5 mt-5">
+            <ul class="mt-5 space-y-5 p-text">
               <li>Traning Overview</li>
               <li>Personal Training</li>
               <li>Personal Training</li>
@@ -646,18 +828,18 @@
         <div class="">
           <div class="bg-[#1D3D63] rounded-t-3xl mt-5">
             <h1
-              class="font-bold text-white text-3xl font-Teko text-center py-3"
+              class="py-3 text-3xl font-bold text-center text-white font-Teko"
             >
               12 Month
             </h1>
           </div>
           <div
-            class="text-center py-5 border-gray-400 border-2 border-t-0 rounded-b-xl"
+            class="py-5 text-center border-2 border-t-0 border-gray-400 rounded-b-xl"
           >
             <p class="text-[36px] font-Teko font-bold text-[#315E97]">
               Rs. 1,000
             </p>
-            <ul class="p-text space-y-5 mt-5">
+            <ul class="mt-5 space-y-5 p-text">
               <li>Traning Overview</li>
               <li>Personal Training</li>
               <li>Personal Training</li>
@@ -686,6 +868,15 @@
           document.getElementById("nav").classList.remove("bg-black");
         }
       });
+    </script>
+    <!-- offcanvas -->
+    <script>
+      const toggleSidebar = () => {
+        document.getElementById("sidebar_black").classList.toggle("hidden");
+        document
+          .getElementById("sidebar")
+          .classList.toggle("-translate-x-full");
+      };
     </script>
   </body>
 </html>
